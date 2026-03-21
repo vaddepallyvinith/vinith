@@ -1,78 +1,382 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Vaddepally Vinith</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaddepally Vinith | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #111111;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      border-bottom: 1px solid #dddddd;
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 48px 0 24px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 10px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #333333;
+    }
+
+    .contact-block {
+      border: 1px solid #111111;
+      padding: 20px;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .contact-block h3,
+    .photo-card h3,
+    .section h2 {
+      margin-bottom: 14px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      font-size: 0.98rem;
+    }
+
+    .photo-card {
+      border: 1px solid #111111;
+      border-radius: 12px;
+      padding: 14px;
+      background: #ffffff;
+    }
+
+    .photo-frame {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .placeholder {
+      text-align: center;
+      color: #666666;
+      padding: 20px;
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 32px 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .card {
+      border: 1px solid #dddddd;
+      border-radius: 12px;
+      padding: 20px;
+      background: #ffffff;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skills-list,
+    .plain-list {
+      padding-left: 18px;
+    }
+
+    .plain-list li,
+    .skills-list li {
+      margin-bottom: 8px;
+    }
+
+    .project {
+      border: 1px solid #111111;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .project h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .project p {
+      margin-bottom: 8px;
+      color: #333333;
+    }
+
+    .muted {
+      color: #444444;
+    }
+
+    footer {
+      padding: 24px 0 36px;
+      text-align: center;
+      color: #555555;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">VADDEPALLY VINITH</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#activities">Activities</a>
+      </div>
+    </div>
+  </nav>
 
-<h1>VADDEPALLY VINITH</h1>
+  <header class="hero" id="about">
+    <div class="container hero-grid">
+      <div>
+        <h1>VADDEPALLY VINITH</h1>
+        <p class="subtitle">Integrated BTech - MTech (CSE) Student | University of Hyderabad</p>
 
-<p>
-Integrated M.Tech (Computer Science & Engineering)<br>
-School of Computer and Information Sciences <br>
-University of Hyderabad
-</p>
+        <div class="contact-block">
+          <h3>Contact</h3>
+          <div class="contact-list">
+            <div><strong>Email:</strong> <a href="mailto:vinith.valbhapur@gmail.com">vinith.valbhapur@gmail.com</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vinith-vaddepally" target="_blank">vinith-vaddepally</a></div>
+            <div><strong>GitHub:</strong> <a href="https://github.com/vaddepallyvinith" target="_blank">vaddepallyvinith</a></div>
+          </div>
+        </div>
+      </div>
 
-<p>
-Email: vinith.valbhapur@gmail.com<br>
-LinkedIn: linkedin.com/in/vinith-vaddepally-1957b3355<br>
-GitHub: github.com/vaddepallyvinith
-</p>
+      <div class="photo-card">
+        <h3>Profile Photo</h3>
+        <div class="photo-frame">
+          <img src="vinith-photo.jpeg" alt="Vaddepally Vinith" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="placeholder" style="display:none;">
+            Add your image as <strong>vinith-photo.jpg</strong><br>
+            in the same folder as this HTML file.
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<hr>
+  <section class="section" id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>University of Hyderabad</h3>
+          <p class="muted">Integrated M.Tech in Computer Science & Engineering</p>
+          <p>2023 - Present</p>
+        </div>
+        <div class="card">
+          <h3>Alphores Jr. College</h3>
+          <p class="muted">Intermediate - Maths, Physics & Chemistry</p>
+          <p>2021 - 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>EDUCATION</h2>
+  <section class="section" id="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="two-col">
+        <div class="card">
+          <ul class="skills-list">
+            <li><strong>Programming Languages:</strong> C/C++, Java, JavaScript, Python, SQL</li>
+            <li><strong>Web Development:</strong> HTML, CSS, Node.js, Express.js, Flask, React.js, Vite.js</li>
+            <li><strong>Databases:</strong> MongoDB, MySQL</li>
+            <li><strong>Data Science & Machine Learning:</strong> NumPy, Pandas, PyTorch, Scikit-learn</li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="skills-list">
+            <li><strong>Mathematics:</strong> Linear Algebra, Differentiation & Integral Calculus, Differential Equations, CBNM, CBOT</li>
+            <li><strong>Core Areas:</strong> DSA, OOP, DBMS, Internet Technologies, Computer Networks, Socket Programming, Cloud Computing</li>
+            <li><strong>Additional Subjects:</strong> Automata Theory, Compiler Design, Computer Graphics, Operating Systems, Computer Architecture, Signals & Systems, EDC</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p><strong>Integrated M.Tech</strong><br>
-Computer Science & Engineering<br>
-University of Hyderabad<br>
-2023 – Present<br>
-</p>
+  <section class="section" id="projects">
+    <div class="container">
+      <h2>Projects</h2>
 
-<p><strong>Intermediate</strong><br>
-Maths, Physics & Chemistry<br>
-Alphores Junior College, Karimnagar<br>
-2021 – 2023<br>
-</p>
+      <div class="project">
+        <h3>Society-Security Management System</h3>
+        <p><strong>Tech Stack:</strong> WAMP Stack</p>
+        <p>Built a secure society management platform to track resident entry and exit, automate visitor logs, and generate real-time alerts for security personnel.</p>
+        <p>Implemented Role-Based Access Control (RBAC) and JWT-based authentication for secure and scalable access management.</p>
+      </div>
 
-<hr>
+      <div class="project">
+        <h3>UoH Herald System</h3>
+        <p><strong>Tech Stack:</strong> Java</p>
+        <p>Designed and developed a department-level digital notice board system enabling authorized publishing of academic and administrative updates.</p>
+        <p>Improved application performance by 30% using caching mechanisms, enhancing response time and scalability.</p>
+      </div>
 
-<h2>TECHNICAL SKILLS</h2>
+      <div class="project">
+        <h3>Real-Time Alumni Web Scraper</h3>
+        <p><strong>Tech Stack:</strong> Node.js, Express.js, Puppeteer, JavaScript</p>
+        <p>Engineered a web scraping system to extract, structure, and store alumni data for professional networking use cases.</p>
+        <p>Performed data cleaning, transformation, and export for downstream analytics and reporting.</p>
+      </div>
 
-<p><strong>Programming Languages:</strong> C/C++, Java, JavaScript, Python, SQL</p>
-<p><strong>Web Development:</strong> HTML, CSS, React.js, Node.js, Express.js, Flask, Vite.js</p>
-<p><strong>Databases:</strong> MySQL, MongoDB</p>
-<p><strong>Data Science & Machine Learning:</strong> NumPy, Pandas, PyTorch, Scikit-learn</p>
-<p><strong>Areas of Specialization:</strong> DSA, OOP, DBMS, Internet Technologies, Computer Networks, Socket Programming, Cloud Computing, Automata Theory & Compiler Design, Computer Graphics, Operating Systems, Computer Architecture, Signals & Systems, EDC</p>
+      <div class="project">
+        <h3>Shipment-Sure</h3>
+        <p><strong>Platform:</strong> INFOSYS Springboard</p>
+        <p><strong>Tech Stack:</strong> Python, Flask, XGBoost, Scikit-Learn</p>
+        <p>Developed a machine learning-powered web application to predict shipment delays using 90+ parameters such as supplier reliability, shipping distance, weather conditions, and seasonal factors.</p>
+        <p>Analyzed feature importance to identify major operational factors influencing delivery performance and support logistics reliability assessment.</p>
+      </div>
+    </div>
+  </section>
 
-<hr>
-
-<h2>PROJECTS</h2>
-
-<p><strong>Society-Security Management System</strong> [WAMP Stack]<br>
-<a href="https://github.com/vaddepallyvinith/Society_Security_Solution">Click here for code</a><br>
-• Secure platform for resident entry/exit tracking, visitor logging, real-time alerts<br>
-• Implemented RBAC + JWT authentication</p>
-
-<p><strong>UoH Herald System</strong> [Java]<br>
-<a href="https://github.com/vaddepallyvinith/University-Herald-System">Click here for code</a><br>
-• Department digital notice board with authorized publishing<br>
-• 30% performance improvement using caching</p>
-
-<p><strong>Real-Time Alumni Web Scraper</strong> [Node.js, Express.js, Puppeteer, JavaScript]<br>
-<a href="https://github.com/vaddepallyvinith/Online_Web_Scraper/tree/main">Click here for code</a><br>
-• Automated extraction, structuring and storage of alumni data<br>
-• Data cleaning and transformation using Pandas</p>
-
-<p><strong>Shipment-Sure</strong> [Python, Flask, XGBoost, Scikit-Learn]<br>
-<a href="https://github.com/vaddepallyvinith/Shipment-Sure/tree/main">Click here for code</a><br>
-• ML-based shipment delay prediction using 90+ features<br>
-• Feature importance analysis for logistics optimization</p>
-<hr>
-<h2>SOME INTRESTING THING I READ</h2>
-<a href="https://karpathy.github.io/2015/05/21/rnn-effectiveness/">1. Effectiveness of RNNs</a><br>
+  <section class="section" id="experience">
+    <div class="container">
+      <h2>Industrial Experience</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Infosys Springboard</h3>
+          <p>2025 - 2026</p>
+        </div>
+        <div class="card">
+          <h3>Ascendion Engineering</h3>
+          <p>2026 - Present</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
+  <section class="section" id="activities">
+    <div class="container">
+      <h2>Extracurricular Activities</h2>
+      <div class="card">
+        <ul class="plain-list">
+          <li>Participated in Smart India Hackathon (SIH) - 2024</li>
+          <li>Gave a seminar on FORTRAN Programming Language - 2025</li>
+          <li>Participated in Pre AI Summit and presented a poster on Shipment-Sure at the University of Hyderabad - 2026</li>
+          <li>Intermediate level badminton player</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Vaddepally Vinith
+    </div>
+  </footer>
 </body>
 </html>
